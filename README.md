@@ -1,4 +1,4 @@
-# `deLender - A Peer-to-Peer Lending Platform on ICP Blockchain`
+# deLender - A Peer-to-Peer Lending Platform on ICP Blockchain
 
 deLender is a decentralized peer-to-peer (P2P) lending platform built on the Internet Computer (ICP) blockchain, allowing users to lend and borrow funds without intermediaries. It leverages smart contracts (canisters) to facilitate secure, transparent, and trustless transactions between lenders and borrowers.
 
