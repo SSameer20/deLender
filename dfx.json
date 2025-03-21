@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "deLender_backend": {
+      "main": "src/deLender_backend/main.mo",
+      "type": "motoko"
+    },
+    "deLender_frontend": {
+      "dependencies": [
+        "deLender_backend"
+      ],
+      "source": [
+        "src/deLender_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "deLender_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
