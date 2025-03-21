@@ -1,6 +1,29 @@
-# `deLender`
+# `deLender - A Peer-to-Peer Lending Platform on ICP Blockchain`
 
-Welcome to your new `deLender` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+deLender is a decentralized peer-to-peer (P2P) lending platform built on the Internet Computer (ICP) blockchain, allowing users to lend and borrow funds without intermediaries. It leverages smart contracts (canisters) to facilitate secure, transparent, and trustless transactions between lenders and borrowers.
+
+## `Features`
+
+- **Decentralized and Trustless**
+- **Smart Contract Automation via Canisters**
+- **Collateralized & Non-Collateralized Loans**
+- **Stable Interest Rates & Risk Mitigation**
+- **User Reputation & Rating System**
+- **Transparent Transactions**
+
+## `Use Cases`
+
+- **Microloans & SME Financing for small businesses**
+- **Crypto-backed Loans without selling assets**
+- **Decentralized Credit Markets based on on-chain reputation & identity**
+
+## `Why ICP`
+
+- **Scalability**
+- **Security**
+- **Low Cost**
+
+## `Setup Local Environment`
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
