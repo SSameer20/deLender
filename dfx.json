@@ -5,12 +5,8 @@
       "type": "motoko"
     },
     "deLender_frontend": {
-      "dependencies": [
-        "deLender_backend"
-      ],
-      "source": [
-        "src/deLender_frontend/dist"
-      ],
+      "dependencies": ["deLender_backend"],
+      "source": ["src/deLender_frontend/dist"],
       "type": "assets",
       "workspace": "deLender_frontend"
     }

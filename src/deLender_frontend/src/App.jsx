@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./styles/App.css";
 import Navigation from "./components/Navigation";
 import { useAuth } from "./providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  const { isAuthenticated, login, logout } = useAuth();
+  const navigate = useNavigate();
+  const { isAuthenticated, login } = useAuth();
 
-  function handleMainStartButton() {
+  const handleMainStartButton = useCallback(() => {
     if (!isAuthenticated) {
       login();
-    } else {
-      return (location.href = "/home");
     }
-  }
+    navigate("/home");
+  }, [isAuthenticated, login, navigate]);
+
   return (
     <div className="delender-app">
       <Navigation />
@@ -101,7 +103,7 @@ function App() {
             className="open-account-button"
             onClick={handleMainStartButton}
           >
-            Lets Try
+            Let's Try
           </button>
         </section>
       </main>

@@ -1,38 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { deLender_backend as node } from "declarations/deLender_backend";
+import Navigation from "../components/Navigation";
+import { Principal } from "@dfinity/principal";
 
-function Home() {
-  const [greeting, setGreeting] = useState("");
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    try {
-      const response = await node.addMoney(); // Ensure addMoney() exists in Motoko
-
-      if (Array.isArray(response) && response.length === 2) {
-        setGreeting(`${response[0]} - Balance: ${response[1]}`);
-      } else {
-        console.error("Unexpected response format:", response);
-        setGreeting("Error: Unexpected response from backend");
-      }
-    } catch (error) {
-      console.error("Error calling backend:", error);
-      setGreeting("Error contacting backend");
-    }
+export default function Home() {
+  const [request, setRequest] = useState([]);
+  async function fetchAllLoanRequest() {
+    const response = await node.getAllLoanRequest();
+    setRequest(response);
+    console.log(response);
   }
+  useEffect(() => {
+    fetchAllLoanRequest();
+  }, []);
 
   return (
-    <main>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Navigation />
       <div>
-        <h1>User Details</h1>
-        <span>Principal Id : {principal}</span>
+        {request.map((item, index) => {
+          return (
+            <div
+              key={index}
+              style={{
+                width: "500px",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-around",
+              }}
+            >
+              <h1>{JSON.stringify(item.borrower).split(":")[1].slice(0, 5)}</h1>
+              <span>{JSON.stringify(item.amount)}</span>
+              <button>Provide Loan</button>
+            </div>
+          );
+        })}
       </div>
-      <form onSubmit={handleSubmit}>
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    </div>
   );
 }
-
-export default Home;
